@@ -50,13 +50,13 @@ const writeToDOM = (theseGuys) => {
 	let colCounter = 0;
 
 	for (let i = 0; i < theseGuys.length; i++) {
-		domString += `<div class="col-sm-3">`;
-		domString += `<"${theseGuys[i].name}">`;
+		domString += `<div class="marvelCard col-sm-3">`;
+		domString += `<section class="thisName">${theseGuys[i].name}</section>`;
 		domString += `<img class="img-circle" src="${theseGuys[i].image}">`;
 		if (theseGuys[i].description !== "") {
-			domString += `"${theseGuys[i].description}"`;
+			domString += `${theseGuys[i].description}`;
 		} else {
-			domString += `${getDesc(theseGuys[i])}"`;
+			domString += `${getDesc(theseGuys[i])}`;
 		}
 		domString += `</div>`;
 

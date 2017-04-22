@@ -31,3 +31,31 @@ body {
 	margin-top: 5px;
 	margin-right: 35px;
 }
+
+/* styling for Marvel Cards */
+.marvelCard {
+	border-top: 1px solid #D4CCC9;
+	border-left: 1px solid #D4CCC9;
+	border-right: 1px solid #D4CCC9;
+	border-bottom: 1px dotted #D4CCC9;
+	padding: 0;
+	width: 22%;
+	margin-left: 2%;
+}
+
+.thisName {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	max-width: 100%;
+	background-color: #FA6800;
+	font-weight: 900;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
