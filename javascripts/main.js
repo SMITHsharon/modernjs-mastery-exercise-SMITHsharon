@@ -2,48 +2,50 @@
 $(document).ready(function(){
 
 let marvelChars = [];
-let theseGuys = [];
 
 
+// event handlers for button clicks
 $("#Men").click((event) => {
-console.log($(event.currentTarget));
-
-let id = $("#Men").attr('id');
-console.log("marvelChars :: ", marvelChars);
-console.log("id :: ", id);
-// console.log("marvelChars.team_id :: ", marvelChars.team_id);
-
 	dataGetter($("#Men").attr('id'));
+  });
 
+$("#Avengers").click((event) => {
+	dataGetter($("#Avengers").attr('id'));
+  });
+
+$("#Guardians").click((event) => {
+	dataGetter($("#Guardians").attr('id'));
   });
 
 
 // creates array for just this team of Marvel characters
 const dataGetter = (teamID) => {
-console.log("gettingData");
+
+	let theseGuys = [];
+	let thisTeamID = -1;
+
 	for (let i=2; i<=4; i++) {
 		if (marvelChars[i].name.includes(teamID)) {
-			let thisTeamID = i;
+			thisTeamID = marvelChars[i].id;
 		}	
 	}
 
 	for (let i=5; i<marvelChars.length; i++) {
 		if (marvelChars[i].team_id === thisTeamID) {
 				theseGuys.push(marvelChars[i]);
-			}
 		}
+	}
 	
-	console.log("theseGuys :: ", theseGuys);
 	writeToDOM(theseGuys);
 };
 
 
-// writes everything to DOM
+// writes everything to DOM for this team of Marvel characteres
 const writeToDOM = (theseGuys) => {
-console.log("writing to DOM");
+console.log("theseGuys :: ", theseGuys);
 	let domString = "";
 
-	domString += ``;
+	// domString += ``;
 	for (let i = 0; i < theseGuys.length; i++) {
 		domString += `<div class="row">`;
 		domString += `<div class="col-sm-3">`;
@@ -57,6 +59,8 @@ console.log("writing to DOM");
 		domString += `</div>`;
 		domString += `</div>`;
 	} // for
+
+	outputContainer.append(domString);
 };
 
 
@@ -77,7 +81,6 @@ const loadGenders = () => {
 		return new Promise((resolve, reject) => {
 			$.ajax("./db/genders.json")
 			.done ((data) => {
-console.log("genders data // what has happened to my data?");
 				resolve(data.genders);
 				// resolve(data);
 			})
@@ -91,7 +94,6 @@ console.log("genders data // what has happened to my data?");
 		return new Promise((resolve, reject) => {
 			$.ajax("./db/teams.json")
 			.done ((data) => {
-console.log("teams data // what has happened to my data?");
 				resolve(data.teams);
 				// resolve(data);
 			})
@@ -105,11 +107,11 @@ console.log("teams data // what has happened to my data?");
 		return new Promise((resolve, reject) => {
 			$.ajax("./db/characters.json")
 			.done ((data) => {
-console.log("characters data // what has happened to my data?");
 				resolve(data.characters);
 				// resolve(data);
 			})
 			.fail ((error) => {
+				console.log("character error", error);
 				reject(error);
 			});
 		});
@@ -122,7 +124,6 @@ Promise.all([loadGenders(), loadTeams(), loadCharacters()])
 			xhrResult.forEach( (charItem) => {
 				marvelChars.push(charItem);
 			});
-console.log("marvelChars :: ", marvelChars);
 		});
 	})
 	.catch( (error) => {
