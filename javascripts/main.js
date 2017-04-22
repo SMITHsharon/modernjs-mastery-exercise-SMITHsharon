@@ -43,11 +43,14 @@ const dataGetter = (teamID) => {
 // writes everything to DOM for this team of Marvel characteres
 const writeToDOM = (theseGuys) => {
 console.log("theseGuys :: ", theseGuys);
-	let domString = "";
 
-	// domString += ``;
+	const output = $("#outputContainer");
+
+	let domString = "";
+	domString += `<div class="row">`;
+	let colCounter = 0;
+
 	for (let i = 0; i < theseGuys.length; i++) {
-		domString += `<div class="row">`;
 		domString += `<div class="col-sm-3">`;
 		domString += `<"${theseGuys[i].name}">`;
 		domString += `<img src="${theseGuys[i].image}">`;
@@ -57,10 +60,20 @@ console.log("theseGuys :: ", theseGuys);
 			domString += `${getDesc(theseGuys[i])}"`;
 		}
 		domString += `</div>`;
-		domString += `</div>`;
+
+		colCounter++;
+		if (colCounter === 4) { // wraps this row
+			domString += `</div>`; // end of row
+			domString += `<div class="row">`;
+			colCounter = 0;
+		} // <if>
+
 	} // for
 
-	outputContainer.append(domString);
+
+		
+	domString += `</div>`;
+	output.append(domString);
 };
 
 
