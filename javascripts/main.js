@@ -4,34 +4,76 @@ $(document).ready(function(){
 // tried to fix when realized
 // wasted time on that, got messed up even more
 
+let marvelChars = [];
+let theseGuys = [];
 
-$("#my-button").click((event) => {
-    console.log($(event.currentTarget));
-    
+
+$("#Men").click((event) => {
+console.log($(event.currentTarget));
+
+let id = $("#Men").attr('id');
+console.log("marvelChars :: ", marvelChars);
+console.log("id :: ", id);
+console.log("marvelChars[2].name.includes(id) :: ", marvelChars[2].name.includes(id));
+// console.log("marvelChars.team_id :: ", marvelChars.team_id);
+
+	dataGetter($("#Men").attr('id'));
+
   });
 
-let marvelChars = [];
 
-
-const dataGetter = (marvelChars) => {
+// creates array for just this team of Marvel characters
+const dataGetter = (teamID) => {
 console.log("gettingData");
+	for (let i=0; i<=4; i++) {
+		if (marvelChars[i].name.includes(id)) {
+			let thisTeamID = i;
+		}	
+	}
+
+	for (let i=5; i<marvelChars.length; i++) {
+		if (marvelChars[i].team_id === thisTeamID) {
+				theseGuys.push(marvelChars[i]);
+			}
+		}
+	
+	console.log("theseGuys :: ", theseGuys);
+	writeToDOM(theseGuys);
 };
 
 
 // writes everything to DOM
-const writeToDOM = (marvelChars) => {
+const writeToDOM = (theseGuys) => {
 console.log("writing to DOM");
 	let domString = "";
 
 	domString += ``;
-	for (let i = 0; i < humanArray.length; i++) {
+	for (let i = 0; i < theseGuys.length; i++) {
 		domString += `<div class="row">`;
 		domString += `<div class="col-sm-3">`;
-		domString += ``;
+		domString += `<"${theseGuys[i].name}">`;
+		domString += `<img src="${theseGuys[i].image}">`;
+		if (theseGuys[i].description !== "") {
+			domString += `"${theseGuys[i].description}"`;
+		} else {
+			domString += `${getDesc(theseGuys[i])}"`;
+		}
 		domString += `</div>`;
 		domString += `</div>`;
 	} // for
 };
+
+
+// write stock Description if there is none given
+const getDesc = (thisGuy) => {
+	if (thisGuy.gender_id === 0) {
+		// female
+		return "abcde fghij klmno pqrst uvwxy z";
+	} else {
+		return "1234567890";
+	}
+};
+
 
 
 // Promise.all resolves 3 functions that get the data from the json files
@@ -39,7 +81,7 @@ const loadGenders = () => {
 		return new Promise((resolve, reject) => {
 			$.ajax("./db/genders.json")
 			.done ((data) => {
-console.log("genders data :: ", data);
+console.log("data");
 				resolve(data.genders);
 			})
 			.fail ((error) => {
@@ -52,6 +94,7 @@ console.log("genders data :: ", data);
 		return new Promise((resolve, reject) => {
 			$.ajax("./db/teams.json")
 			.done ((data) => {
+console.log("data");
 				resolve(data.teams);
 			})
 			.fail ((error) => {
@@ -64,6 +107,7 @@ console.log("genders data :: ", data);
 		return new Promise((resolve, reject) => {
 			$.ajax("./db/characters.json")
 			.done ((data) => {
+console.log("data");
 				resolve(data.characters);
 			})
 			.fail ((error) => {
@@ -79,24 +123,12 @@ Promise.all([loadGenders(), loadTeams(), loadCharacters()])
 			xhrResult.forEach( (charItem) => {
 				marvelChars.push(charItem);
 			});
+console.log("marvelChars :: ", marvelChars);
 		});
 	})
 	.catch( (error) => {
 		console.log(error);
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 });
