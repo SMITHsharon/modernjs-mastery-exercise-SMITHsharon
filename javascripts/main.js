@@ -52,11 +52,13 @@ const writeToDOM = (theseGuys) => {
 	for (let i = 0; i < theseGuys.length; i++) {
 		domString += `<div class="marvelCard col-sm-3">`;
 		domString += `<section class="thisName">${theseGuys[i].name}</section>`;
-		domString += `<img class="img-circle" src="${theseGuys[i].image}">`;
+
+		domString += `<img class="img-circle ${getClassGender(theseGuys[i])}" src="${theseGuys[i].image}">`;
+
 		if (theseGuys[i].description !== "") {
-			domString += `${theseGuys[i].description}`;
+			domString += `<section class="thisDesc">${theseGuys[i].description}</section>`;
 		} else {
-			domString += `${getDesc(theseGuys[i])}`;
+			domString += `<section class="thisDesc">${getDesc(theseGuys[i])}</section>`;
 		}
 		domString += `</div>`;
 
@@ -82,6 +84,16 @@ const getDesc = (thisGuy) => {
 		return "1234567890";
 	}
 };
+
+
+const getClassGender = (thisGuy => {
+	if (thisGuy.gender_id === 0) {
+		// female
+		return "female";
+	} else {
+		return "male";
+	}
+});
 
 
 

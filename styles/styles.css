@@ -3,9 +3,12 @@ body {
 	background-color: #756661;
 }
 
+
 #launchLogo {
 	margin-left: 38%;
 }
+
+
 
 /* styling for navbar */
 .navbar {
@@ -32,7 +35,16 @@ body {
 	margin-right: 35px;
 }
 
+
+
 /* styling for Marvel Cards */
+
+.row {
+	margin-top: 25px;
+
+}
+
+
 .marvelCard {
 	border-top: 1px solid #D4CCC9;
 	border-left: 1px solid #D4CCC9;
@@ -42,6 +54,7 @@ body {
 	width: 22%;
 	margin-left: 2%;
 }
+
 
 .thisName {
 	padding-top: 6px;
@@ -53,9 +66,28 @@ body {
 }
 
 
+.img-circle {
+	margin-top: 15px;
+	margin-left: 13%;
+}
+
+
+.female {
+	border: 4px solid pink;
+}
 
 
 
 
+.male {
+	border: 4px solid blue;
+}
+
+
+.thisDesc {
+	padding-bottom: 20px;
+	color: red;
+	text-align: center;
+}
 
 
