@@ -42,18 +42,17 @@ const dataGetter = (teamID) => {
 
 // writes everything to DOM for this team of Marvel characteres
 const writeToDOM = (theseGuys) => {
-console.log("theseGuys :: ", theseGuys);
-
-	const output = $("#outputContainer");
 
 	let domString = "";
+	$("#outputContainer").empty(); // clear the DOM from prior output
+
 	domString += `<div class="row">`;
 	let colCounter = 0;
 
 	for (let i = 0; i < theseGuys.length; i++) {
 		domString += `<div class="col-sm-3">`;
 		domString += `<"${theseGuys[i].name}">`;
-		domString += `<img src="${theseGuys[i].image}">`;
+		domString += `<img class="img-circle" src="${theseGuys[i].image}">`;
 		if (theseGuys[i].description !== "") {
 			domString += `"${theseGuys[i].description}"`;
 		} else {
@@ -67,13 +66,10 @@ console.log("theseGuys :: ", theseGuys);
 			domString += `<div class="row">`;
 			colCounter = 0;
 		} // <if>
-
 	} // for
 
-
-		
 	domString += `</div>`;
-	output.append(domString);
+	$("#outputContainer").append(domString);
 };
 
 
@@ -95,7 +91,6 @@ const loadGenders = () => {
 			$.ajax("./db/genders.json")
 			.done ((data) => {
 				resolve(data.genders);
-				// resolve(data);
 			})
 			.fail ((error) => {
 				reject(error);
@@ -108,7 +103,6 @@ const loadGenders = () => {
 			$.ajax("./db/teams.json")
 			.done ((data) => {
 				resolve(data.teams);
-				// resolve(data);
 			})
 			.fail ((error) => {
 				reject(error);
@@ -121,7 +115,6 @@ const loadGenders = () => {
 			$.ajax("./db/characters.json")
 			.done ((data) => {
 				resolve(data.characters);
-				// resolve(data);
 			})
 			.fail ((error) => {
 				console.log("character error", error);
@@ -132,7 +125,7 @@ const loadGenders = () => {
 
 
 Promise.all([loadGenders(), loadTeams(), loadCharacters()])
-	.then(function(result){
+	.then( (result) => {
 		result.forEach( (xhrResult) => {
 			xhrResult.forEach( (charItem) => {
 				marvelChars.push(charItem);

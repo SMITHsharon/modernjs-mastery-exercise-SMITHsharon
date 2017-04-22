@@ -1,4 +1,33 @@
 
 body {
-	background-color: lightblue;
+	background-color: #756661;
+}
+
+#launchLogo {
+	margin-left: 38%;
+}
+
+/* styling for navbar */
+.navbar {
+	background-color: black;
+	border: 1px solid black;
+}
+
+
+#btnLogo {
+	margin-top: 5px;
+	margin-left: 2px;
+	padding: 0 0;
+	border: 1px solid black;
+}
+
+
+.navbar-right {
+	margin-left: 50%;
+}
+
+
+.btn-primary {
+	margin-top: 5px;
+	margin-right: 35px;
 }
