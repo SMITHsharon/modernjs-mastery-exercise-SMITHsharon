@@ -1,8 +1,5 @@
 
 $(document).ready(function(){
-// my project-setup all messed up :(
-// tried to fix when realized
-// wasted time on that, got messed up even more
 
 let marvelChars = [];
 let theseGuys = [];
@@ -14,7 +11,6 @@ console.log($(event.currentTarget));
 let id = $("#Men").attr('id');
 console.log("marvelChars :: ", marvelChars);
 console.log("id :: ", id);
-console.log("marvelChars[2].name.includes(id) :: ", marvelChars[2].name.includes(id));
 // console.log("marvelChars.team_id :: ", marvelChars.team_id);
 
 	dataGetter($("#Men").attr('id'));
@@ -25,8 +21,8 @@ console.log("marvelChars[2].name.includes(id) :: ", marvelChars[2].name.includes
 // creates array for just this team of Marvel characters
 const dataGetter = (teamID) => {
 console.log("gettingData");
-	for (let i=0; i<=4; i++) {
-		if (marvelChars[i].name.includes(id)) {
+	for (let i=2; i<=4; i++) {
+		if (marvelChars[i].name.includes(teamID)) {
 			let thisTeamID = i;
 		}	
 	}
@@ -81,8 +77,9 @@ const loadGenders = () => {
 		return new Promise((resolve, reject) => {
 			$.ajax("./db/genders.json")
 			.done ((data) => {
-console.log("data");
+console.log("genders data // what has happened to my data?");
 				resolve(data.genders);
+				// resolve(data);
 			})
 			.fail ((error) => {
 				reject(error);
@@ -94,8 +91,9 @@ console.log("data");
 		return new Promise((resolve, reject) => {
 			$.ajax("./db/teams.json")
 			.done ((data) => {
-console.log("data");
+console.log("teams data // what has happened to my data?");
 				resolve(data.teams);
+				// resolve(data);
 			})
 			.fail ((error) => {
 				reject(error);
@@ -107,8 +105,9 @@ console.log("data");
 		return new Promise((resolve, reject) => {
 			$.ajax("./db/characters.json")
 			.done ((data) => {
-console.log("data");
+console.log("characters data // what has happened to my data?");
 				resolve(data.characters);
+				// resolve(data);
 			})
 			.fail ((error) => {
 				reject(error);
