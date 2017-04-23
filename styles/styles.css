@@ -9,11 +9,12 @@ body {
 }
 
 
-
-/* styling for navbar */
+/***********************************/
+/* styling for navbar 
+/***********************************/
 .navbar {
-	background-color: black;
-	border: 1px solid black;
+	background-color: #000000;
+	border: 1px solid #000000;
 }
 
 
@@ -37,19 +38,19 @@ body {
 
 
 
-/* styling for Marvel Cards */
-
+/***********************************/
+/* styling for Marvel Cards 
+/***********************************/
 .row {
 	margin-top: 25px;
-
 }
 
 
 .marvelCard {
-	border-top: 1px solid #D4CCC9;
-	border-left: 1px solid #D4CCC9;
-	border-right: 1px solid #D4CCC9;
-	border-bottom: 1px dotted #D4CCC9;
+	border-top: 1px solid #C0C0C0;
+	border-left: 1px solid #C0C0C0;
+	border-right: 1px solid #C0C0C0;
+	border-bottom: 1px dotted #C0C0C0;
 	padding: 0;
 	width: 22%;
 	margin-left: 2%;
@@ -60,7 +61,8 @@ body {
 	padding-top: 6px;
 	padding-bottom: 6px;
 	max-width: 100%;
-	background-color: #FA6800;
+	background-color: #f78f3f;
+	color: #504a4a;
 	font-weight: 900;
 	text-align: center;
 }
@@ -77,16 +79,14 @@ body {
 }
 
 
-
-
 .male {
-	border: 4px solid blue;
+	border: 4px solid #518cca;
 }
 
 
 .thisDesc {
 	padding-bottom: 20px;
-	color: red;
+	color: #e23636;
 	text-align: center;
 }
 

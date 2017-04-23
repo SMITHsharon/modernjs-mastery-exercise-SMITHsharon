@@ -18,7 +18,7 @@ $("#Guardians").click((event) => {
   });
 
 
-// creates array for just this team of Marvel characters
+// creates array for just the selected team of Marvel characters
 const dataGetter = (teamID) => {
 
 	let theseGuys = [];
@@ -78,7 +78,7 @@ const writeToDOM = (theseGuys) => {
 // write stock Description if there is none given
 const getDesc = (thisGuy) => {
 	if (thisGuy.gender_id === 0) {
-		// female
+		// for female
 		return "abcde fghij klmno pqrst uvwxy z";
 	} else {
 		return "1234567890";
