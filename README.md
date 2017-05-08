@@ -4,13 +4,6 @@
 
 This exercise was an in-class quiz on project-setup, basic jQuery, and Bootstrap features and functionality. 
 
-#### Marvel Page on Launch
-![Marvel Page on Launch]()
-
-#### Marvel Page on Selecting The Avengers
-![Marvel Page on Selecting The Avengers]()
-
-
 ### Project Specs
 #### Project Set-Up
 - Cloned the project to local
