@@ -8,10 +8,37 @@
 </head>
 
 <body>
-	<h1>NSS Marvels Quiz</h1>
+	<!-- <h1>NSS Marvels Quiz</h1> -->
 
-  
-  	
+	<nav class="navbar navbar-default">
+	    <div class="navbar-header">
+	    	<button type="button" id="btnLogo" class="btn"><img src="./images/marvel_logo.png" height="32px"></button>
+	    </div>
+
+	    <div>
+			<ul class="nav navbar-nav navbar-right pull-right">
+				<li>
+		        	<button type="button" id="Men" class="btn btn-primary">X-Men</button>
+		        </li>
+
+		        <li>
+		       		<button type="button" id="Avengers" class="btn btn-primary">The Avengers</button>
+		        </li>
+
+		        <li>
+		        	<button type="button" id="Guardians" class="btn btn-primary">Guardians of the Galaxy</button>
+		        </li>
+	        </ul>
+	    </div>   
+	</nav>
+
+
+	<div id="outputContainer">
+		<!-- on launch, display Marvel logo -->
+		<img id="launchLogo" src="./images/marvel_logo.png">
+
+		<!-- on button click, Marvel character output goes here -->
+	</div>
 
 	<script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>

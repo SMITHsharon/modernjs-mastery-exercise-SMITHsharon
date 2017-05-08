@@ -1,4 +1,93 @@
 
 body {
-	background-color: lightblue;
+
+	background-color: #756661;
 }
+
+
+#launchLogo {
+	margin-left: 38%;
+}
+
+
+/***********************************/
+/* styling for navbar 
+/***********************************/
+.navbar {
+	background-color: #000000;
+	border: 1px solid #000000;
+}
+
+
+#btnLogo {
+	margin-top: 5px;
+	margin-left: 2px;
+	padding: 0 0;
+	border: 1px solid black;
+}
+
+
+.navbar-right {
+	margin-left: 50%;
+}
+
+
+.btn-primary {
+	margin-top: 5px;
+	margin-right: 35px;
+}
+
+
+
+/***********************************/
+/* styling for Marvel Cards 
+/***********************************/
+.row {
+	margin-top: 25px;
+}
+
+
+.marvelCard {
+	border-top: 1px solid #C0C0C0;
+	border-left: 1px solid #C0C0C0;
+	border-right: 1px solid #C0C0C0;
+	border-bottom: 1px dotted #C0C0C0;
+	padding: 0;
+	width: 22%;
+	margin-left: 2%;
+}
+
+
+.thisName {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	max-width: 100%;
+	background-color: #f78f3f;
+	color: #504a4a;
+	font-weight: 900;
+	text-align: center;
+}
+
+
+.img-circle {
+	margin-top: 15px;
+	margin-left: 13%;
+}
+
+
+.female {
+	border: 4px solid pink;
+}
+
+
+.male {
+	border: 4px solid #518cca;
+}
+
+
+.thisDesc {
+	padding-bottom: 20px;
+	color: #e23636;
+	text-align: center;
+}
+
