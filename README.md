@@ -5,8 +5,10 @@
 This exercise was an in-class quiz on project-setup, basic jQuery, and Bootstrap features and functionality. 
 
 #### MARVELJS
-![MARVEL Page on Launch]()
+MARVEL Page on Launch
+![MARVEL Page on Launch](https://raw.githubusercontent.com/SMITHsharon/modernjs-mastery-exercise-SMITHsharon/master/images/screenshots/on_load.png)
 
+MARVEL Page on Selecting Avengers
 ![MARVEL Page on Selecting Avengers](https://raw.githubusercontent.com/SMITHsharon/modernjs-mastery-exercise-SMITHsharon/master/images/screenshots/on_click.png)
 
 ### Project Specs
